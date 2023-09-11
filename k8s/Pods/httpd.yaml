@@ -15,7 +15,7 @@ spec:
   template: 
     metadata: 
       labels:
-        name: httpd-1
+        app: httpd-1
         release: v1.1
     spec: 
       containers: 
