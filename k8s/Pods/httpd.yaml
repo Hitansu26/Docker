@@ -21,6 +21,9 @@ spec:
       containers: 
         - name: mycont
           image: httpd:2.4
+          command:
+            - sleep
+            - 1d
           ports:
             - containerPort: 8080
               protocol: TCP  
