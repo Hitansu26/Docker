@@ -1,0 +1,26 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata: 
+  name: httpd-rs
+  labels: 
+    purpose: demohttpd
+spec: 
+  minReadySeconds: 5
+  replicas: 3
+  selector: 
+    matchLabels:
+      app: httpd
+      release: v1.1
+  template: 
+    metadata: 
+      labels:
+        name: httpd
+        release: v1.1
+    spec: 
+      containers: 
+        - name: httpd
+          image: httpd:2.4
+          ports:
+            - containerPort: 8080
+              protocol: TCP  
