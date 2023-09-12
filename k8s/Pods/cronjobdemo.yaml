@@ -12,9 +12,6 @@ spec:
       labels: 
         purpose: jobdemo
     spec: 
-      selector: 
-        matchLabels: 
-          app: batch
       backoffLimit: 3
       template: 
         metaddata: 
