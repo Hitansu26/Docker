@@ -11,7 +11,8 @@ spec:
     metadata: 
       labels: 
         purpose: jobdemo
-    spec: 
+    spec:
+      restartPolicy: OnFailure 
       backoffLimit: 3
       template: 
         metaddata: 

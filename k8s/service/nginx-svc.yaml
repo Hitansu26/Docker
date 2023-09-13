@@ -1,0 +1,31 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata: 
+  name: demoset
+  labels: 
+    app: nginx
+    purpose: learning 
+spec: 
+  minReadySeconds: 2
+  replicas: 3
+  selector:
+    LabelSelector:
+      matchLabels: 
+        app: nginx
+  template: 
+    metadata:
+      labels: 
+        app: nginx
+    spec: 
+      containers: 
+      -  name: mycont
+         image: nginx:1.25
+         command: 
+           - Sleep
+           - 1d
+         ports: 
+           - containerPorts: 80
+             protocol: TCP 
+          
+
